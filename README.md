@@ -20,15 +20,15 @@ provider "azurerm" {
 }
 
 module "azure-infra" {
-  source  = "wcollins/infra/azure"
+  source  = "wcollins/azureinfra/azurerm"
 
   location            = "eastus2"
-  resource_group_name = "rg-azure-eastus2"
-  vnet_name           = "vnet-azure-eastus2"
+  resource_group_name = "rg-azure-east"
+  vnet_name           = "vnet-azure-east"
   address_space       = "10.2.0.0/16"
-  subnet_names        = ["snet-01", "snet-02", "snet-03"]
+  subnet_names        = ["subnet-01", "subnet-02", "subnet-03"]
   subnet_prefixes     = ["10.2.1.0/24", "10.2.2.0/24", "10.2.3.0/24"]
-  vm_names            = ["vm-east-01", "vm-east-02", "vm-east-03"]
+  vm_names            = ["vm-azure-east-01", "vm-azure-east-02", "vm-azure-east-03"]
   ssh_key             = var.ssh_key
 }
 ```
